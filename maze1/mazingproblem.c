@@ -46,6 +46,7 @@ int main()
        make_maze(); 
     }
     fclose(fp);
+
     return 0;
 }
 
@@ -145,8 +146,13 @@ void make_maze()
     }
     
     fclose(fp);
+    for(i = 0; i < height; i++)
+    {
+        free(array[i]);
+    }
+    free(array);
 
-        path();
+    path();
 
 }
 
@@ -242,6 +248,18 @@ void path()
     }
 
     print_stack(row, col);
+
+    for(i=0; i<(height+2); i++)
+    {
+        freegit (mark[i]);
+    }
+    free(mark);
+
+    for(i = 0; i < (height+2); i++)
+    {
+        free(newmaze[i]);
+    }
+    free(newmaze);
     
 }
 
@@ -289,6 +307,13 @@ void print_stack(int a, int b)
         printf("\n");
         
     }
+
+    
+    for(i=0;i<(height+2);i++)
+    {
+        free(answer[i]);
+    }
+    free(answer);
 }
 
 //성공한 파일
