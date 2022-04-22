@@ -251,7 +251,7 @@ void path()
 
     for(i=0; i<(height+2); i++)
     {
-        freegit (mark[i]);
+        free(mark[i]);
     }
     free(mark);
 
@@ -316,4 +316,4 @@ void print_stack(int a, int b)
     free(answer);
 }
 
-//성공한 파일
+//수정한 파일
